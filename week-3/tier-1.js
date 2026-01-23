@@ -1,4 +1,4 @@
-const secretNumber = Math.round(Math.random() * 10);
+const secretNumber = Math.floor(Math.random() * 10) + 1;
 
 for (let attempts = 3; attempts > 0; attempts--) {
   const guess = prompt(`Guess a number between 1 and 10. ${attempts} attempts left`);
