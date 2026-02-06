@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PFP Week 5 - Tier 3</title>
+
+  <style>
+    ul.tasks {
+      list-style: square;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label for="new-task-input">New Task</label>
+    <input id="new-task-input" type="text" />
+    <button id="add-task-btn">Add Task</button>
+  </div>
+  
+  <ul id="tasks-list" class="tasks">
+  
+  </ul>
+
+  <script>
+    const newTaskInput = document.querySelector('#new-task-input');
+    document.querySelector('#add-task-btn').addEventListener('click', () => {
+      const newTask = newTaskInput.value;
+      const taskNode = document.createElement('li');
+      taskNode.innerText = newTask;
+      document.querySelector('#tasks-list').appendChild(taskNode);
+      newTaskInput.value = '';
+    });
+  </script>
+</body>
+
+</html>
