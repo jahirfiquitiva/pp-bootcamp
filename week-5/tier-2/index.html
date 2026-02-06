@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PFP Week 5 - Tier 2</title>
+
+  <style>
+    button {
+      min-height: 2.75rem;
+      border-radius: 0.5rem;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="buttons-container">
+    <img id="img-to-remove" width="96" height="96" src="https://github.com/jahirfiquitiva.png" />
+    <button id="remove-button">Remove image</button>
+  </div>
+  <script>
+    document.querySelector('#remove-button').addEventListener('click', () => {
+      document.querySelector('#img-to-remove').remove();
+    });
+  </script>
+</body>
+
+</html>
