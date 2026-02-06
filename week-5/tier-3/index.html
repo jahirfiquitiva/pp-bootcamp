@@ -22,19 +22,28 @@
     <input id="new-task-input" type="text" />
     <button id="add-task-btn">Add Task</button>
   </div>
-  
+
   <ul id="tasks-list" class="tasks">
-  
+
   </ul>
 
   <script>
     const newTaskInput = document.querySelector('#new-task-input');
-    document.querySelector('#add-task-btn').addEventListener('click', () => {
-      const newTask = newTaskInput.value;
+    const tasksListElement = document.querySelector('#tasks-list');
+
+    function addNewTask() {
       const taskNode = document.createElement('li');
-      taskNode.innerText = newTask;
-      document.querySelector('#tasks-list').appendChild(taskNode);
+      taskNode.innerText = newTaskInput.value;
+      tasksListElement.appendChild(taskNode);
       newTaskInput.value = '';
+    }
+
+    document.querySelector('#add-task-btn').addEventListener('click', addNewTask);
+
+    newTaskInput.addEventListener("keydown", (event) => {
+      if (event.key == "Enter") {
+        addNewTask();
+      }
     });
   </script>
 </body>
